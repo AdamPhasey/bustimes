@@ -26,7 +26,7 @@ const App = () => {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      setSearchResults(undefined);
+      setSearchResults(undefined)
       const data = await fetch("http://localhost:3000/bus-times");
       const res: BusTime[] = await data.json();
       const now = new Date().getDay();
@@ -124,13 +124,12 @@ const App = () => {
 
   return (
     <div className="App flex flex-col items-center">
-      <div className="flex flex-col items-center">
-        <UserSearch buttonText={"Search"} onChange={handleSearch} />
-        <br />
+      <UserSearch buttonText={"Search"} onChange={handleSearch} />
+      <div className="flex flex-col items-center mt-5 mb-5">
         <div>
           Live bus times for <b> Park Road</b>
         </div>
-        <br />
+        <br/>
         {busTimes &&
           busTimes.map((e) => (
             <div className="Card mb-2">
@@ -148,7 +147,8 @@ const App = () => {
             </div>
           ))}
         <br />
-        {nonOperationalBuses && <div>Buses Not In Service</div>}
+
+        <div>Buses Not In Service</div>
         {nonOperationalBuses &&
           nonOperationalBuses.map((e) => (
             <div className="Card">
