@@ -26,7 +26,7 @@ const App = () => {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      setSearchResults(undefined)
+      setSearchResults(undefined);
       const data = await fetch("http://localhost:3000/bus-times");
       const res: BusTime[] = await data.json();
       const now = new Date().getDay();
@@ -129,7 +129,7 @@ const App = () => {
         <div>
           Live bus times for <b> Park Road</b>
         </div>
-        <br/>
+        <br />
         {busTimes &&
           busTimes.map((e) => (
             <div className="Card mb-2">
