@@ -9,4 +9,5 @@ export class ApiController {
   getBusTimes() {
     return this.apiService.getBusTimes();
   }
+
 }
